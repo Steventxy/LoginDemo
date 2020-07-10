@@ -18,7 +18,7 @@
     <select id="selectUserByName" parameterType="String" resultMap="UserMap">
         select user_id,login_name,username,salt,password,del_flag
         from user
-        where username=#{username}
+        where login_name=#{loginName}
     </select>
 
 
