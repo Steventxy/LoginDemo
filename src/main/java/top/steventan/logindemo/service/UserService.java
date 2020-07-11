@@ -10,4 +10,5 @@ public interface UserService {
 
     User selectUserByName(String loginName);
 
+    void addUser(User user);
 }

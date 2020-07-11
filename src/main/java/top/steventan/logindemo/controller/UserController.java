@@ -1,7 +1,10 @@
 package top.steventan.logindemo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import top.steventan.logindemo.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,9 +15,20 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class UserController {
 
+    @Autowired
+    UserServiceImpl userService;
 
     @GetMapping("/index")
-    public String index(HttpServletRequest request){
+    public String index(){
         return "index";
+    }
+
+    @PostMapping("/register")
+    public void userRegister(HttpServletRequest request){
+        System.out.println(request.getParameter("loginName"));
+        System.out.println(request.getParameter("username"));
+        System.out.println(request.getParameter("password"));
+        System.out.println(request.getParameter("salt"));
+//        userService.addUser();
     }
 }

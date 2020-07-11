@@ -1,5 +1,5 @@
 $(function () {
-    $(document).keydown(function (event) {
+    $(document).keyup(function (event) {
         if (event.keyCode === 13) {
             $("#login").click();
         }
@@ -12,8 +12,8 @@ $(function () {
 
         form.render();
 
-        form.on('submit(login-submit)', function (obj) {
-            console.log(obj.field);
+        form.on('submit(login)', function (obj) {
+            // console.log(obj.field);
             if ($("#username").val() === '') {
                 layer.msg("请输入用户名！", {
                     icon: 5, anim: 6, shade: [0.5, '#000000'], shadeClose: true

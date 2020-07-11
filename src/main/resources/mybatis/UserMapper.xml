@@ -21,5 +21,22 @@
         where login_name=#{loginName}
     </select>
 
+    <insert id="addUser" parameterMap="UsersMap">
+        insert into user(
+                login_name,
+                username,
+                salt,
+                password,
+                del_flag
+            )
+        values(
+            #{loginName},
+            #{username},
+            #{salt},
+            #{password},
+            #{delFlag}
+        )
+    </insert>
+
 
 </mapper>

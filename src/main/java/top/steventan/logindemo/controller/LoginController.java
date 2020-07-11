@@ -39,9 +39,11 @@ public class LoginController {
     public String login(HttpServletRequest request){
         String login_name = request.getParameter("loginName");
         String password = request.getParameter("password");
+
         Subject subject = SecurityUtils.getSubject();
-        System.out.println(login_name);
+
         AuthenticationToken token = new UsernamePasswordToken(login_name,password);
+
         try {
             subject.login(token);
         } catch (IncorrectCredentialsException e) {
