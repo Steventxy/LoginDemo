@@ -21,7 +21,7 @@
         where login_name=#{loginName}
     </select>
 
-    <insert id="addUser" parameterMap="UsersMap">
+    <insert id="addUser" parameterType="User">
         insert into user(
                 login_name,
                 username,

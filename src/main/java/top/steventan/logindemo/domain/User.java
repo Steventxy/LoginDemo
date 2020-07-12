@@ -20,4 +20,12 @@ public class User {
     private String password;
 
     private String delFlag;
+
+    public User(String loginName, String username, String salt, String password) {
+        this.loginName = loginName;
+        this.username = username;
+        this.salt = salt;
+        this.password = password;
+        this.delFlag = "0";
+    }
 }

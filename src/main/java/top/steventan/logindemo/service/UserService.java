@@ -10,5 +10,8 @@ public interface UserService {
 
     User selectUserByName(String loginName);
 
-    void addUser(User user);
+    int addUser(User user);
+
+    String randomSalt(int len);
+
 }
