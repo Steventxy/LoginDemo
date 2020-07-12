@@ -26,6 +26,11 @@ public class UserController {
         return "index";
     }
 
+    @GetMapping("/logout")
+    public String logout(){
+        return "index";
+    }
+
     @PostMapping("/register")
     @ResponseBody
     public String userRegister(HttpServletRequest request) {
