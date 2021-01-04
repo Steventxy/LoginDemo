@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.steventan.logindemo.mapper.UserMapper">
     <resultMap id="UserMap" type="User">
-        <id property="userId"           column="user_id"/>
-        <result property="loginName"    column="login_name"/>
-        <result property="username"     column="username"/>
-        <result property="salt"         column="salt"/>
-        <result property="password"     column="password"/>
-        <result property="delFlag"      column="del_flag"/>
+        <id property="userId" column="user_id"/>
+        <result property="loginName" column="login_name"/>
+        <result property="username" column="username"/>
+        <result property="salt" column="salt"/>
+        <result property="password" column="password"/>
+        <result property="delFlag" column="del_flag"/>
     </resultMap>
 
     <select id="selectUserList" resultMap="UserMap">
@@ -21,7 +21,7 @@
         where login_name=#{loginName}
     </select>
 
-    <insert id="addUser" parameterType="User">
+    <insert id="addUser" parameterType="user">
         insert into user(
                 login_name,
                 username,
